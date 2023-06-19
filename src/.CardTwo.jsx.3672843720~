@@ -1,0 +1,41 @@
+import * as React from 'react'
+
+const CardTwo = () => {
+  const [size, setSize] = React.useState(10)
+
+  const handleChange = (event) => {
+    event.preventDefault()
+    setSize(event.target.value)
+  }
+
+  return (
+    <div className="card-second box p-4 mt-5">
+      <div className="columns is-relative is-flex-wrap-wrap">
+        <div className="column is-full">
+          <div className="columns is-align-items-end is-justify-content-space-between">
+            <p className="is-half has-text-white">You`ve used <span>815 GB</span> of your storage</p>
+            <p className="icon-clip is-half notification is-absolute has-t-5">
+              <span className="is-size-1">${size}</span> GB LEFT
+            </p>
+          </div>
+        </div>
+        <div className="column is-full px-0">
+          <input
+            className="input is-primary"
+            type="range"
+            min='0'
+            max='1000'
+            onChange={handleChange}
+            defaultValue={size}
+          />
+        </div>
+      </div>
+      <div className="columns">
+        <p className="column has-text-white">0 GB</p>
+        <p className="column has-text-white">1000 GB</p>
+      </div>
+    </div>
+  )
+}
+
+export default CardTwo

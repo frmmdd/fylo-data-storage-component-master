@@ -1,0 +1,61 @@
+@import 'bulma/css/bulma.css';
+
+:root {
+--Pale-Blue: hsl(243, 100%, 93%);
+--Grayish-Blue: hsl(229, 7%, 55%);
+--Dark-Blue: hsl(228, 56%, 26%);
+--Very-Dark-Blue: hsl(229, 57%, 11%);
+}
+
+body {
+  background-color: var(--Very-Dark-Blue);
+  background-image: url('bg-desktop.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: bottom; 
+}
+
+main {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+  min-height: 100vh
+}
+
+.card-one {
+  background: var(--Dark-Blue);
+  border-top-right-radius: 120px;
+}
+
+.card-second {
+  height: 13em;
+  background: var(--Dark-Blue);
+}
+
+.icon-clip {
+  clip-path: polygon(30% 0%, 70% 0%, 100% 0, 100% 100%, 74% 85%, 74% 84%, 0 85%, 0 0);
+}
+
+.icon {
+  background-color: var(--Very-Dark-Blue);
+}
+
+@media screen and (max-width: 950px) {
+  main {
+    gap: 0.5em;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  main {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  body {
+    background-image: url('bg-mobile.png')
+  }
+}
